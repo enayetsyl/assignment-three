@@ -1,11 +1,234 @@
+<!-- 
+    main mark
+    1. nav bar with menu, rounded search box and search icon
+    2. banner with slider and text
+    3. deal of the day 
+    4. meet the team with background image, team member rounded image in single line with overley and icon
+    5. footer with minimum 3 social media icon
+
+    Bonus mark
+    1. slider under section 
+    2. deal of day details button should show a new modal with rating icon and two button
+    3. why choose us 
+    4. responsiveness for our layout
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <!-- tailwind and daisyui cdn -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.3.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind config-->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "btn-color": "#f85559",
+              heading: "#121212",
+              para: "rgba(18, 18, 18, 0.60)",
+            },
+          },
+        },
+      };
+    </script>
+    <!--font awsome kit-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:wght@400;500;600;700;800&family=Lato:wght@100;300;400;700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .font-lato {
+        font-family: "Lato", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="font-lato">
+    <!-- header -->
+    <header class="max-w-screen-xl mx-auto px-5">
+      <!-- nav bar -->
+
+      <nav
+        class="rounded-[600px] md:bg-btn-color dark:text-white mt-12 py-7 px-14"
+      >
+        <div class="container flex justify-between h-16 mx-auto">
+          <ul class="items-stretch hidden space-x-3 lg:flex">
+            <li class="flex">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex text-lg font-medium items-center px-2 text-white"
+                >Home</a
+              >
+            </li>
+            <li class="flex">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex text-lg font-medium items-center px-2 text-white"
+                >About Us</a
+              >
+            </li>
+            <li class="flex">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex text-lg font-medium items-center px-2 text-white"
+                >Shop</a
+              >
+            </li>
+            <li class="flex">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex text-lg font-medium items-center px-2 text-white"
+                >All Fruits</a
+              >
+            </li>
+          </ul>
+          <!-- logo and text -->
+          <div class="flex justify-center items-center gap-4">
+            <img src="./images/logo.png" alt="" />
+            <h3 class="text-white text-4xl font-bold">Fruit Burst</h3>
+          </div>
+          <!-- search button -->
+          <div class="md:flex md:items-center md:space-x-4 hidden">
+            <div class="relative">
+              <input
+                type="search"
+                name="Search"
+                placeholder="Search..."
+                class="w-32 py-2 pl-10 text-sm rounded-[50px] sm:w-auto focus:outline-none bg-white text-para focus:dark:bg-gray-900"
+              />
+
+              <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                <button
+                  type="submit"
+                  title="Search"
+                  class="p-1 focus:outline-none focus:ring"
+                >
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 512 512"
+                    class="w-4 h-4 dark:text-gray-100"
+                  >
+                    <path
+                      d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
+                    ></path>
+                  </svg>
+                </button>
+              </span>
+            </div>
+          </div>
+          <!-- small menu -->
+          <button title="Open menu" type="button" class="p-4 lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-6 h-6 md:text-white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- deal of the day -->
+      <section class="max-w-screen-xl mx-auto p-5"></section>
+
+      <!-- meet the team -->
+      <section class="max-w-screen-xl mx-auto p-5"></section>
+
+      <!-- why choose us -->
+      <section class="max-w-screen-xl mx-auto p-5"></section>
+    </main>
+    <!-- footer -->
+    <footer class="">
+      <!-- container -->
+      <div class="max-w-screen-xl mx-auto p-5">
+        <section class="footer footer-center p-10 text-base-content rounded">
+          <div class="grid grid-flow-col gap-4">
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+          </div>
+          <div>
+            <div class="grid grid-flow-col gap-4">
+              <a
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  ></path></svg
+              ></a>
+              <a
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                  ></path></svg
+              ></a>
+              <a
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+          <div>
+            <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+          </div>
+        </section>
+      </div>
+    </footer>
+  </body>
 </html>
